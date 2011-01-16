@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="/_utils/script/jquery.js"></script>
+    <script type="text/javascript" src="/testdb/_design/testapp/main.js"></script>
+  </head>
+  <body>
+    <form id="regist" action="/testdb/" method="post">
+      <label>日時<input type="date" name="date" id="date" /></label>
+      <label>金額<input id="amount" type="number" name="amount"/></label>
+      <label>コメント<textarea id="comment" name="comment"></textarea></label>
+      <input type="submit" value="登録"/>
+    </form>
+  </body>
+</html>

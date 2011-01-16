@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="/_utils/script/jquery.js"></script> 
+    <script type="text/javascript" src="/testdb/_design/testapp/main.js"></script>
+    <title>データ詳細</title>
+    </head>
+  <body>
+    <h1>データ詳細</h1> 
+    <form id="doc" name="edit" action="/testdb/{{_id}}">
+      <input type="hidden" id="_id" name="_id" value="{{_id}}"/>
+      <input type="hidden" id="_rev" name="_rev" value="{{_rev}}"/>
+      <dl>
+	<dt>日付</dt><dd id="date">{{date}}</dd>
+	<dt>金額</dt><dd id="amount">{{amount}}</dd>
+	<dt>コメント</dt><dd id="comment">{{comment}}</dd>
+      </dl>
+      <input type="button" id="delete" data-icon="delete" value="削除"/>
+    </form>
+  </body>
+</html>

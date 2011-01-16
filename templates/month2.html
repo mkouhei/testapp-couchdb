@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link type="text/css" rel="stylesheet" href="/testdb/_design/testapp/jquery.mobile-1.0a2.min.css" />
+    <script type="text/javascript" src="/testdb/_design/testapp/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="/testdb/_design/testapp/main2.js"></script>
+    <script type="text/javascript" src="/testdb/_design/testapp/jquery.mobile-1.0a2.min.js"></script>
+    <title>リスト(サンプル)</title>
+  </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header" data-position="fixed">
+	<h1>リスト(サンプル)</h1>
+      </div>
+      <div data-role="content">
+	<ul data-role="listview">
+          {{#datalist}}
+          <li><h3>日付:{{date}}</h3>
+	    <p>コメント:{{comment}}</p>
+	    <p><a href="/testdb/_design/testapp/_show/detail2/{{_id}}" rel="external">{{amount}}</a></p>
+	  </li>
+          {{/datalist}}
+        </ul>
+      </div>
+      <div data-role="footer" data-position="fixed">
+	<div data-role="navbar">
+	  <ul>
+	    <li><a href="/testdb/_design/testapp/index.html" rel="external">Home</a></li>
+	    <li><a href="/testdb/_design/testapp/regist2.html" rel="external">データ入力</a></li>
+	    <li><a href="/testdb/_design/testapp/replication2.html" rel="external">データ同期</a></li>
+	  </ul>
+	</div>
+      </div>
+    </div>
+  </body>
+</html>

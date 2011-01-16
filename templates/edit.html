@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link type="text/css" rel="stylesheet" href="../../jquery.mobile-1.0a2.min.css" />
+    <script type="text/javascript" src="../../jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="../../main2.js"></script>
+    <script src="../../jquery.mobile-1.0a2.min.js"></script>
+    <title>データ編集(サンプル)</title>
+  </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header" data-position="fixed">
+	<h1>データ編集(サンプル)</h1> 
+      </div>
+      <div data-role="content">
+	<form id="regist" action="/testdb/{{_id}}">
+	  <dl>
+	    <input type="hidden" id="_id" name="_id" value="{{_id}}"/>
+	    <input type="hidden" id="_rev" name="_rev" value="{{_rev}}"/>
+	    <dt>日付</dt>
+	    <dd><input type="date" id="date" name="date" value="{{date}}" /></dd>
+	    <dt>金額</dt>
+	    <dd><input type="number" id="amount" name="amount" value="{{amount}}" /></dd>
+	    <dt>コメント</dt>
+	    <dd><textarea id="comment" name="comment">{{comment}}</textarea></dd>
+	  </dl>
+	  <input type="button" id="submit" data-icon="refresh" value="更新"/>
+	</form>
+      </div>
+      <div data-role="footer" data-position="fixed">
+	<div data-role="navbar">
+	  <ul>
+	    <li><a href="/testdb/_design/testapp/index.html" rel="external">Home</a></li>
+	    <li><a href="/testdb/_design/testapp/regist2.html" rel="external">データ入力</a></li>
+	    <li><a href="/testdb/_design/testapp/replication2.html" rel="external">データ同期</a></li>
+	  </ul>
+	</div>
+      </div>
+    </div>
+  </body>
+</html>

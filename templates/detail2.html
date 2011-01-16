@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link type="text/css" rel="stylesheet" href="/testdb/_design/testapp/main.css" /> 
+    <link type="text/css" rel="stylesheet" href="/testdb/_design/testapp/jquery.mobile-1.0a2.min.css" />
+    <script type="text/javascript" src="/testdb/_design/testapp/jquery-1.4.4.min.js"></script>
+    <script src="/testdb/_design/testapp/jquery.mobile-1.0a2.min.js"></script>
+    <script type="text/javascript" src="/testdb/_design/testapp/main2.js"></script>
+    <title>データ詳細</title>
+    </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header" data-position="fixed">
+	<a href="/testdb/_design/testapp/_list/month2/date" data-icon="arrow-l">収支一覧</a>
+	<a id="edit" href="/testdb/_design/testapp/_show/edit/{{_id}}" rel="external" data-icon="gear">修正</a>
+	<h1>データ詳細</h1> 
+      </div>
+      <div data-role="content">
+	<form id="doc" name="edit" action="/testdb/{{_id}}">
+	  <input type="hidden" id="_id" name="_id" value="{{_id}}"/>
+	  <input type="hidden" id="_rev" name="_rev" value="{{_rev}}"/>
+	  <dl>
+	    <dt>日付</dt><dd id="date">{{date}}</dd>
+	    <dt>金額</dt><dd id="amount">{{amount}}</dd>
+	    <dt>コメント</dt><dd id="comment">{{comment}}</dd>
+	  </dl>
+	  <input type="button" id="delete" data-icon="delete" value="削除"/>
+	</form>
+      </div>
+      <div data-role="footer" data-position="fixed">
+	<div data-role="navbar">
+	  <ul>
+	    <li><a href="/testdb/_design/testapp/index.html" rel="external">Home</a></li>
+	    <li><a href="/testdb/_design/testapp/regist2.html" rel="external">データ入力</a></li>
+	    <li><a href="/testdb/_design/testapp/replication2.html" rel="external">データ同期</a></li>
+	  </ul>
+	</div>
+      </div>
+    </div>
+  </body>
+</html>

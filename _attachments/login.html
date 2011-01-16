@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ログイン</title>
+    <script src="vendor/couchapp/loader.js"></script>
+    <script type="text/javascript" src="login.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </head>
+  <body>
+    <h1>ログイン</h1>
+    <div id="account"></div>
+    <div id="profile"></div>
+    <p>データベースの作成やレプリケーションの実行するためにはログインが必要です。</p>
+    <p>アカウントを持っていなければ、最初にアカウントを作成してください。</p>
+    <a href="/testdb/_design/testapp/replication.html">レプリケーション</a>
+  </body>
+  <script type="text/javascript">
+    // for login process
+    $.couch.app(function(app) {
+    $("#account").evently("account", app);
+    $("#profile").evently("profile", app);
+    });
+  </script>
+</html>

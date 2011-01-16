@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>リスト</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr><td>日付</td><td>コメント</td><td>金額</td></tr>
+      </thead>
+      <tbody>
+        {{#datalist}}
+        <tr>
+          <td>{{date}}</td><td>{{comment}}</td><td><a href="/testdb/_design/testapp/_show/detail/{{_id}}">{{amount}}</a></td>
+        </tr>
+        {{/datalist}}
+      </tbody>
+    </table>
+  </body>
+</html>

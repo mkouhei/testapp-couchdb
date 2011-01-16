@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link type="text/css" rel="stylesheet" href="jquery.mobile-1.0a2.min.css" />
+    <script type="text/javascript" src="/testdb/_design/testapp/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="/testdb/_design/testapp/main2.js"></script>
+    <script type="text/javascript" src="/testdb/_design/testapp/jquery.mobile-1.0a2.min.js"></script>
+    <title>レプリケーション(サンプル)</title>
+  </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header" data-postion="fixed">
+	<h1>レプリケーション(サンプル)</h1>
+      </div>
+      <div data-role="content">
+	<form id="replication" action="/_replicate" method="post">
+	  <h4>レプリケーション先DBの情報</h4>
+	  <div data-role="fieldcontain">
+	    <label>ユーザ名<input type="text" name="admin" id="admin" /></label>
+	  </div>
+	  <div data-role="fieldcontain">
+	    <label>パスワード<input type="password" name="password" id="password" /></label>
+	  </div>
+	  <div data-role="fieldcontain">
+	    <label>ホスト名/IPアドレス<input type="text" id="target" name="target"/></label>
+	  </div>
+	  <div data-role="fieldcontain">
+	    <label>DB名<input type="text" id="targetdb" name="targetdb" value="testdb" /></label>
+	  </div>
+	  <div data-role="fieldcontain">
+	    <label>port番号<input type="text" id="targetport" name="targetport" value="5984"/></label>
+	  </div>
+	  <h4>レプリケーション元DBの情報</h4>
+	  <div data-role="fieldcontain">
+	    <label>ホスト名/IPアドレス<input type="text" id="source" name="source" /></label>
+	  </div>
+	  <div data-role="fieldcontain">
+	    <label>DB名<input type="text" id="sourcedb" name="sourcedb" value="testdb" /></label>
+	  </div>
+	  <div data-role="fieldcontain">
+	    <label>port番号<input type="text" id="sourceport" name="sourceport" value="5984"/></label>
+	  </div>
+	  <input type="button" id="submit" value="レプリケーション実行"/>
+	</form>
+      </div>
+      <div data-role="footer" data-position="fixed">
+	<div data-role="navbar">
+	  <ul>
+	    <li><a href="/testdb/_design/testapp/index.html" rel="external">Home</a></li>
+	    <li><a href="/testdb/_design/testapp/replication2.html" rel="external">データ同期</a></li>
+	  </ul>
+	</div>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="/_utils/script/jquery.js"></script>
+    <script type="text/javascript" src="/testdb/_design/testapp/main.js"></script>
+  </head>
+  <body>
+    <form id="replication" action="/_replicate" method="post">
+      <h4>レプリケーション先DBの情報</h4>
+      <label>ユーザ名<input type="text" name="admin" id="admin" /></label>
+      <label>パスワード<input type="password" name="password" id="password" /></label>
+      <label>ホスト名/IPアドレス<input type="text" id="target" name="target"/></label>
+      <label>DB名<input type="text" id="targetdb" name="targetdb" value="testdb" /></label>
+      <label>port番号<input type="text" id="targetport" name="targetport" value="5984"/></label>
+      <h4>レプリケーション元DBの情報</h4>
+      <label>ホスト名/IPアドレス<input type="text" id="source" name="source" /></label>
+      <label>DB名<input type="text" id="sourcedb" name="sourcedb" value="testdb" /></label>
+      <label>port番号<input type="text" id="sourceport" name="sourceport" value="5984"/></label>
+      <input type="submit" id="submit" value="レプリケーション実行"/>
+    </form>
+  </body>
+</html>
