@@ -1,7 +1,7 @@
 $(function() {
 
     // delete document
-    $("input:button#delete").click(function(e){
+    $("input:submit#delete").click(function(e){
         event.preventDefault();
         $("a#edit").css("display","none");
 
@@ -14,7 +14,7 @@ $(function() {
     });
 
     // create / update document
-    $("form#regist input:button#submit").click(function(e) {
+    $("form#regist input:submit").click(function(e) {
         event.preventDefault();
 
         var httpMethod = 'POST';
@@ -94,64 +94,8 @@ $(function() {
                 console.log(xhr.status);
                 console.log(textStatus);
                 $(identifier).replaceWith("<p>" + str + "完了しました。</p>");
-                $("head").append('<META http-equiv="refresh" CONTENT="2;URL=/testdb/_design/testapp/index.html">');
             }
         });
     }
 
-    $("form#replication input:button").click(function(e) {
-        event.preventDefault();
-
-        var data = {};
-        var source = $("input#source").val();
-        var sourcedb = $("input#sourcedb").val();
-	var sourceport = $("input#sourceport").val();
-	if (targetport == "80") {
-            data.source = 'http://' + source + '/' + sourcedb;
-	} else if (targetport == "443") {
-            data.source = 'https://' + source + '/' + sourcedb;
-	} else {
-	    data.source = 'http://' + source + ':' + sourceport + '/' + sourcedb;
-	}
-
-        var admin = $("input#admin").val();
-        var pw = $("input#password").val();
-        var target =  $("input#target").val();
-        var targetdb =  $("input#targetdb").val();
-	var targetport = $("input#targetport").val();
-	if (targetport == "80") {
-            data.target = 'http://' + admin + ':' + pw + '@' + target +
-		'/' + targetdb;
-	} else if (targetport == "443") {
-            data.target = 'https://' + admin + ':' + pw + '@' + target +
-		'/' + targetdb;
-	} else {
-            data.target = 'http://' + admin + ':' + pw + '@' + target +
-		':' + targetport + '/' + targetdb;
-	}
-        var serializedJSON = JSON.stringify(data);
-
-        new $.ajax({
-            url: 'http://127.0.0.1:5984/_replicate',
-            type: "POST",
-            data: serializedJSON,
-            contentType: "application/json",
-            dataType: "json",
-            sucess: function(data, dataType) {
-		console.log("returned: " + data);
-                console.log(dataType);
-		$("form").replaceWith("<p>レプリケーション成功しました。</p>");
-	    },
-            error: function(xhr, textStatus, errorThrown) {
-		console.log(xhr.status);
-                console.log(textStatus);
-		$("form").replaceWith("<p>レプリケーション失敗しました。</p>");
-	    },
-            complete: function(xhr, textStatus) {
-		console.log(xhr.status);
-                console.log(textStatus);
-		$("form").replaceWith("<p>レプリケーション完了しました。</p>");
-	    }
-        });
-    });
 });
