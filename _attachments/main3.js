@@ -1,7 +1,7 @@
 $(function() {
 
     // delete document
-    $("input:button#delete").click(function(e){
+    $("input:submit#delete").click(function(e){
         event.preventDefault();
         $("a#edit").css("display","none");
 
@@ -14,7 +14,7 @@ $(function() {
     });
 
     // create / update document
-    $("form#regist input:button#submit").click(function(e) {
+    $("form#regist input:submit#submit").click(function(e) {
         event.preventDefault();
 
         var httpMethod = 'POST';
